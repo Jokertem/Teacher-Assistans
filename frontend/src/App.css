@@ -1,0 +1,17 @@
+body {
+  background-color: var(--backGroundColor);
+}
+.tittle {
+  text-align: center;
+  color: var(--mainColor);
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.navigation * {
+  margin: 10px;
+}

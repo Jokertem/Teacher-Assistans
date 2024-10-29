@@ -1,0 +1,10 @@
+.name {
+  text-align: center;
+  color: var(--mainColor);
+  margin-top: 20px;
+}
+.link {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
