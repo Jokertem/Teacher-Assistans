@@ -1,0 +1,22 @@
+.tableTittle {
+  text-align: center;
+  color: var(--mainColor);
+}
+
+.table {
+  border-color: var(--mainColor);
+  margin: auto;
+  width: 190px;
+  height: 180px;
+}
+.table * {
+  color: var(--mainColor);
+}
+.table td {
+  text-align: center;
+}
+.changeinfo {
+  display: block;
+  text-align: center;
+  color: var(--mainColor);
+}
