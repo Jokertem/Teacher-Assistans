@@ -3,8 +3,7 @@ import Paga_Name from "../components/page_name/Paga_Name";
 import { useState, useEffect, createContext } from "react";
 import GradesTable from "../components/GradesTable/GradesTable";
 import GradesChange from "../components/gradesChange/GradesChange";
-import { json } from "react-router-dom";
-
+import Calculator from "../components/calculator/Calculator";
 export const gradesContext = createContext();
 
 export default function GradesCalc() {
@@ -53,6 +52,7 @@ export default function GradesCalc() {
       >
         <GradesTable />
         {edit && <GradesChange />}
+        <Calculator />
       </gradesContext.Provider>
     </>
   );

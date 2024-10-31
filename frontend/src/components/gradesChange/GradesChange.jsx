@@ -18,7 +18,7 @@ export default function GradesChange() {
   };
   const Save = (e) => {
     e.preventDefault();
-    const selectPercent = document.querySelector("#prc").value;
+    const selectPercent = Number(document.querySelector("#prc").value);
     if (selectPercent > 100 || selectPercent < 1 || isNaN(selectPercent)) {
       return;
     }

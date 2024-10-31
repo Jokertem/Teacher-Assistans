@@ -1,0 +1,30 @@
+.h3 {
+  text-align: center;
+  color: var(--mainColor);
+  margin-top: 20px;
+}
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.calc b {
+  margin: 0 10px;
+  color: var(--mainColor);
+}
+.calc button {
+  width: 60px;
+  height: 25px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.6s;
+}
+.calc button:hover {
+  transform: scale(1.2);
+  background-color: var(--mainColor);
+  font-size: 12px;
+  box-shadow: 0px 2px 18px 7px var(--mainColor);
+  -webkit-box-shadow: 0px 2px 18px 7px var(--mainColor);
+  -moz-box-shadow: 0px 2px 18px 7px var(--mainColor);
+}
