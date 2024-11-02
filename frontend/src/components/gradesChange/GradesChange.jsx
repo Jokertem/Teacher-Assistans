@@ -42,7 +42,7 @@ export default function GradesChange() {
 
   return (
     <>
-      <h3 className={styles.h3}>Zmiana Oceny</h3>
+      <h3>Zmiana Oceny</h3>
       <form autoComplete="none" action="">
         <div className={styles.change}>
           <b

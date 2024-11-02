@@ -17,7 +17,7 @@ export default function GradesTable() {
   };
   return (
     <>
-      <h3 className={styles.tableTittle}>Oceny</h3>
+      <h3>Oceny</h3>
       <table border={1} className={styles.table}>
         <thead>
           <tr>

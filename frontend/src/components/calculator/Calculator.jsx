@@ -60,7 +60,7 @@ export default function Calculator() {
 
   return (
     <>
-      <h3 className={styles.h3}>Kalkulator</h3>
+      <h3>Kalkulator</h3>
       <form action="">
         <div className={styles.calc}>
           <input type="number" placeholder="MAX" onChange={ChangeMax} />

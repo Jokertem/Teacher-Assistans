@@ -4,6 +4,7 @@ import "./App.css";
 import NotFound from "./views/NotFound";
 import Home from "./views/Home";
 import GradesCalc from "./views/GradesCalc";
+import TestGenerator from "./views/TestGenerator";
 
 function App() {
   const projectName = "Teacher Assisants";
@@ -14,6 +15,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/oceny" element={<GradesCalc />} />
+
+        <Route path="/sprawdziany" element={<TestGenerator />} />
       </Routes>
     </>
   );

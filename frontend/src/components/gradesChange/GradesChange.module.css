@@ -1,8 +1,3 @@
-.h3 {
-  text-align: center;
-  color: var(--mainColor);
-  margin-top: 10px;
-}
 .change {
   display: flex;
   flex-direction: column;

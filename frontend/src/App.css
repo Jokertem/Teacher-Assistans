@@ -15,3 +15,8 @@ body {
 .navigation * {
   margin: 10px;
 }
+h3 {
+  text-align: center;
+  color: var(--mainColor);
+  margin-top: 20px;
+}
