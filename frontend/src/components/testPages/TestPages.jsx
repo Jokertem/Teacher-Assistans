@@ -22,7 +22,7 @@ export default function TestPages() {
           <div className={styles.pagesList}>
             {pages.map((page, index) => (
               <div
-                key={page._id}
+                key={page.name}
                 className={styles.page}
                 onClick={() => {
                   ChangeSelect(index);
