@@ -12,6 +12,7 @@ export default function OnePage() {
   const [title, setTitle] = useState("Sprawdzian");
   const [max, setMax] = useState(0);
 
+  const [editTitle, setEditTitle] = useState(false);
   const ChangeTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -21,7 +22,7 @@ export default function OnePage() {
       {select != null && (
         <>
           <h3>Sprawdzian</h3>
-          {select == 0 && (
+          {select == 0 && editTitle && (
             <textarea
               className={styles.title_input}
               value={title}
@@ -37,6 +38,14 @@ export default function OnePage() {
                 </div>
                 <div>
                   <b>{title}</b>
+                  <img
+                    className={styles.edit}
+                    src="public/editIcon.png"
+                    alt="Edit Title Icon"
+                    onClick={() => {
+                      setEditTitle(!editTitle);
+                    }}
+                  />
                 </div>
                 <div>
                   <b>{`___/${max}`}</b>
