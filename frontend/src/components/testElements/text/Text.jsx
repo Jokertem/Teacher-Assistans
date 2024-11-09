@@ -6,7 +6,7 @@ export default function Text(props) {
     <>
       <div className="element">
         <b>{props.element.title}</b>
-        <p>{props.element.text}</p>
+        <p className={styles.textValue}>{props.element.text}</p>
       </div>
     </>
   );

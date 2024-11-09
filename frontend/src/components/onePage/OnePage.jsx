@@ -4,10 +4,11 @@ import { useState, useContext, useEffect } from "react";
 import { pagesContext } from "../../views/TestGenerator";
 import Elements from "../elements/Elements";
 export default function OnePage() {
-  const { _pages, _select, _elements } = useContext(pagesContext);
+  const { _pages, _select, _elements, _modal } = useContext(pagesContext);
   const [pages, setPages] = _pages;
   const [select, setSelect] = _select;
   const [elements, setElements] = _elements;
+  const [modal, setModal] = _modal;
 
   const [title, setTitle] = useState("Sprawdzian");
   const [max, setMax] = useState(0);
@@ -53,6 +54,16 @@ export default function OnePage() {
               </div>
             )}
             <Elements />
+            <div className={styles.addContainer}>
+              <button
+                className={styles.add}
+                onClick={() => {
+                  setModal(true);
+                }}
+              >
+                +
+              </button>
+            </div>
           </div>
         </>
       )}

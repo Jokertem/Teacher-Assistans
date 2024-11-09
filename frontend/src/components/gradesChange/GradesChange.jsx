@@ -45,20 +45,24 @@ export default function GradesChange() {
       <h3>Zmiana Oceny</h3>
       <form autoComplete="none" action="">
         <div className={styles.change}>
-          <b
-            className={styles.change__grade}
-          >{`Ocena ${grades[select].grade}`}</b>
-          <div className={styles.change__input}>
-            <label htmlFor="prc">Procenty</label>
-            <input
-              id="prc"
-              type="number"
-              min={1}
-              max={100}
-              value={percent}
-              onChange={ChangePercent}
-            />
-          </div>
+          <table className={styles.changeTable} border={1}>
+            <tr>
+              <th>{`Ocena ${grades[select].grade}`}</th>
+            </tr>
+            <tr className={styles.changeTable__prc}>
+              <td>
+                <label htmlFor="prc">Procenty</label>
+                <input
+                  id="prc"
+                  type="number"
+                  min={1}
+                  max={100}
+                  value={percent}
+                  onChange={ChangePercent}
+                />
+              </td>
+            </tr>
+          </table>
 
           <button className={styles.change__save} onClick={Save}>
             Zapisz

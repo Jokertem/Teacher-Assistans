@@ -6,8 +6,9 @@ import Text from "../testElements/text/Text";
 import ABC from "../testElements/abc/ABC";
 
 export default function Elements(props) {
-  const { _elements } = useContext(pagesContext);
+  const { _elements, _modal } = useContext(pagesContext);
   const [elements, setElements] = _elements;
+  const [modal, setModal] = _modal;
 
   return (
     <>
