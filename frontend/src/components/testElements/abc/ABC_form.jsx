@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./ABC.module.css";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { pagesContext } from "../../../views/TestGenerator";
+
 import { ABC } from "../../../classes/abc";
 export default function ABC_form(props) {
+  const { _edit } = useContext(pagesContext);
+  const [editElement, setEditElement] = _edit;
   const [task, setTask] = useState("");
   const [a, setA] = useState("");
   const [b, setB] = useState("");
@@ -43,33 +47,49 @@ export default function ABC_form(props) {
     const newTask = new ABC(task, a, b, c, d, points);
     props.add(newTask);
   };
+  useEffect(() => {
+    if (editElement && editElement.type == "ABC") {
+      setTask(editElement.ask);
+      setA(editElement.anwsers[0]);
+      setB(editElement.anwsers[1]);
+      setC(editElement.anwsers[2]);
+      setD(editElement.anwsers[3]);
+      setPoints(editElement.points);
+    }
+  }, [editElement]);
   return (
     <form className="elementform" action="">
       <div>
         <label htmlFor="">Treść zadania</label>
-        <input type="text" onChange={ChangeTask} />
+        <input type="text" value={task} onChange={ChangeTask} />
       </div>
       <div className={styles.form__answers}>
         <div>
           <label htmlFor="">A</label>
-          <input type="text" name="" id="" onChange={ChangeA} />
+          <input type="text" name="" id="" value={a} onChange={ChangeA} />
         </div>
         <div>
           <label htmlFor="">B</label>
-          <input type="text" name="" id="" onChange={ChangeB} />
+          <input type="text" name="" id="" value={b} onChange={ChangeB} />
         </div>
         <div>
           <label htmlFor="">C</label>
-          <input type="text" name="" id="" onChange={ChangeC} />
+          <input type="text" name="" id="" value={c} onChange={ChangeC} />
         </div>
         <div>
           <label htmlFor="">D</label>
-          <input type="text" name="" id="" onChange={ChangeD} />
+          <input type="text" name="" id="" value={d} onChange={ChangeD} />
         </div>
       </div>
       <div>
         <label htmlFor="">Punkty</label>
-        <input type="number" name="" id="" onChange={ChangePoints} />
+        <input
+          type="number"
+          name=""
+          id=""
+          value={points}
+          onChange={ChangePoints}
+        />
       </div>
       <button id="add" onClick={Create}>
         Dodaj

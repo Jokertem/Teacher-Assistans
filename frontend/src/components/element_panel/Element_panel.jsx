@@ -3,12 +3,20 @@ import styles from "./Element_panel.module.css";
 import { useContext } from "react";
 import { pagesContext } from "../../views/TestGenerator";
 export default function Element_panel(props) {
-  const { _pages, _select, _elements, _modal } = useContext(pagesContext);
+  const { _pages, _select, _elements, _modal, _edit } =
+    useContext(pagesContext);
   const [pages, setPages] = _pages;
   const [select, setSelect] = _select;
   const [elements, setElements] = _elements;
   const [modal, setModal] = _modal;
+  const [editElement, setEditElement] = _edit;
 
+  const SelectEdit = (index) => {
+    setEditElement(pages[select].elements[index]);
+    setModal(true);
+
+    console.log(editElement);
+  };
   const Remove = (i) => {
     const newElements = elements.filter((element, index) => index != i);
     const newPage = pages.map((page, index) => {
@@ -75,6 +83,13 @@ export default function Element_panel(props) {
               BackIndex(props.index);
             }}
           ></div>
+          <img
+            src="public/editIcon.png"
+            alt="Edit Icon"
+            onClick={() => {
+              SelectEdit(props.index);
+            }}
+          />
           <img
             src="public/trash.png"
             alt="Remove Icon"

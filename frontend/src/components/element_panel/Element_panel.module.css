@@ -20,3 +20,9 @@
   border-right: 10px solid transparent;
   border-top: 20px solid var(--mainColor);
 }
+@media print {
+  .upArrow,
+  .downArrow {
+    display: none;
+  }
+}
