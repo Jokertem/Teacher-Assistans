@@ -1,0 +1,22 @@
+.element_panel {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.element_panel * {
+  cursor: pointer;
+}
+.upArrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid var(--mainColor);
+}
+.downArrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid var(--mainColor);
+}

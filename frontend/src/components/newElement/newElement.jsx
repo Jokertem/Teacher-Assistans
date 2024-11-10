@@ -25,10 +25,9 @@ export default function NewElement(props) {
     });
     setPages(newPage);
     setModal(false);
-    console.log(pages);
   };
   if (props.type == "ABC") {
-    return <ABC_form />;
+    return <ABC_form add={Add} />;
   } else if (props.type == "Text") {
     return <Text_form add={Add} />;
   }

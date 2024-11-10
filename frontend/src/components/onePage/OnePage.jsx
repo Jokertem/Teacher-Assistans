@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./OnePage.module.css";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useRef } from "react";
 import { pagesContext } from "../../views/TestGenerator";
+import { PrintContext } from "../../App";
 import Elements from "../elements/Elements";
 export default function OnePage() {
+  const { _print } = useContext(PrintContext);
+  const [innerRef, handlePrint] = _print;
   const { _pages, _select, _elements, _modal } = useContext(pagesContext);
   const [pages, setPages] = _pages;
   const [select, setSelect] = _select;
@@ -21,6 +24,11 @@ export default function OnePage() {
   return (
     <>
       {select != null && (
+        <button className={styles.print} onClick={handlePrint}>
+          Drukuj
+        </button>
+      )}
+      {select != null && (
         <>
           <h3>Sprawdzian</h3>
           {select == 0 && editTitle && (
@@ -30,7 +38,7 @@ export default function OnePage() {
               onChange={ChangeTitle}
             ></textarea>
           )}
-          <div className={styles.page}>
+          <div ref={innerRef} className={styles.page}>
             {select == 0 && (
               <div className={styles.page__header}>
                 <div>

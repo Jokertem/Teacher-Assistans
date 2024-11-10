@@ -6,7 +6,7 @@ export default function Text_form(props) {
     e.preventDefault();
     console.log(document.querySelector("#text_value").value);
     if (
-      document.querySelector("#text_title").value.trim() == "" &&
+      document.querySelector("#text_title").value.trim() == "" ||
       document.querySelector("#text_value").value.trim() == ""
     ) {
       return;

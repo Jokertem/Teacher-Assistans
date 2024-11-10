@@ -24,6 +24,7 @@ export default function TestPages() {
     setPages(PagesNumerator);
   };
   const RemovePage = (index) => {
+    setSelect(null);
     setPages(pages.filter((page, i) => i != index));
     setPages(PagesNumerator);
   };
