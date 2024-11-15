@@ -4,6 +4,7 @@ import { pagesContext } from "../../views/TestGenerator";
 import React from "react";
 import { Page } from "../../classes/page";
 import { PagesNumerator } from "../../utils/pagesNumerator.js";
+import { TaskNumerator } from "../../utils/tasksNumerator.js";
 
 export default function TestPages() {
   const { _pages, _select } = useContext(pagesContext);
@@ -38,6 +39,7 @@ export default function TestPages() {
       ];
       setPages(updatePages);
       setPages(PagesNumerator);
+      setPages(TaskNumerator);
     }
   };
   const ForwardIndex = (index) => {
@@ -49,9 +51,9 @@ export default function TestPages() {
       ];
       setPages(updatePages);
       setPages(PagesNumerator);
+      setPages(TaskNumerator);
     }
   };
-
   return (
     <>
       <h3>Strony</h3>

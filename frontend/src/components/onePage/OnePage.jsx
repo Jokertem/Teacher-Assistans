@@ -1,9 +1,10 @@
-import React from "react";
 import styles from "./OnePage.module.css";
-import { useState, useContext, useRef } from "react";
+import { useState, useContext, useEffect } from "react";
 import { pagesContext } from "../../views/TestGenerator";
 import { PrintContext } from "../../App";
 import Elements from "../elements/Elements";
+import { PointsCouter } from "../../utils/pointsCounter";
+import { TaskNumerator } from "../../utils/tasksNumerator";
 export default function OnePage() {
   const { _print } = useContext(PrintContext);
   const [innerRef, handlePrint] = _print;
@@ -14,13 +15,17 @@ export default function OnePage() {
   const [modal, setModal] = _modal;
 
   const [title, setTitle] = useState("Sprawdzian");
-  const [max, setMax] = useState(0);
+  const [max, setMax] = useState(1);
 
   const [editTitle, setEditTitle] = useState(false);
   const ChangeTitle = (e) => {
     setTitle(e.target.value);
   };
-
+  useEffect(() => {
+    const newMax = PointsCouter(max, pages);
+    setMax(newMax);
+    setPages(TaskNumerator);
+  }, [pages]);
   return (
     <>
       {select != null && (

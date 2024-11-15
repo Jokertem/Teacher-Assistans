@@ -5,7 +5,7 @@ export default function ABC(props) {
   return (
     <div className="element">
       <div className={styles.task}>
-        <b className="taskname">{props.element.ask}</b>
+        <b className="taskname">{props.element.title}</b>
         <b className={styles.points}>__/{props.element.points}</b>
       </div>
       <div className={styles.anwsers}>

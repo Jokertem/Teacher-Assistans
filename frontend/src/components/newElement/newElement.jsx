@@ -3,6 +3,7 @@ import Text_form from "../testElements/text/Text_form";
 import ABC_form from "../testElements/abc/ABC_form";
 import { useContext } from "react";
 import { pagesContext } from "../../views/TestGenerator";
+import { TaskNumerator } from "../../utils/tasksNumerator";
 
 export default function NewElement(props) {
   const { _pages, _select, _elements, _modal, _edit } =

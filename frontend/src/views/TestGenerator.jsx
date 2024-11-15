@@ -3,6 +3,7 @@ import Paga_Name from "../components/page_name/Paga_Name";
 import TestPages from "../components/testPages/TestPages";
 import OnePage from "../components/onePage/OnePage";
 import Modal from "../components/modal/modal";
+import { TaskNumerator } from "../utils/tasksNumerator.js";
 import { useState, createContext, useEffect } from "react";
 export const pagesContext = createContext();
 export const elementsContext = createContext();
@@ -25,7 +26,7 @@ export default function TestGenerator() {
         },
         {
           type: "ABC",
-          ask: "Z jakiego kraju pochodzi glock",
+          title: "1. Z jakiego kraju pochodzi glock",
           anwsers: ["Austria", "Węgry", "Włochy", "Niemcy"],
           points: 2,
           _id: crypto.randomUUID(),
@@ -33,10 +34,12 @@ export default function TestGenerator() {
       ],
     },
   ]);
+
   useEffect(() => {
     if (select != null) {
       setElements(pages[select].elements);
     }
+    console.log("effect");
   }, [select, pages]);
   return (
     <>

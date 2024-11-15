@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Element_panel.module.css";
 import { useContext } from "react";
 import { pagesContext } from "../../views/TestGenerator";
+import { TaskNumerator } from "../../utils/tasksNumerator";
 export default function Element_panel(props) {
   const { _pages, _select, _elements, _modal, _edit } =
     useContext(pagesContext);
@@ -14,8 +15,6 @@ export default function Element_panel(props) {
   const SelectEdit = (index) => {
     setEditElement(pages[select].elements[index]);
     setModal(true);
-
-    console.log(editElement);
   };
   const Remove = (i) => {
     const newElements = elements.filter((element, index) => index != i);
@@ -39,7 +38,7 @@ export default function Element_panel(props) {
         updateElements[index - 1],
         updateElements[index],
       ];
-      console.log(updateElements);
+
       const newPage = pages.map((page, index) => {
         if (index == select) {
           return {

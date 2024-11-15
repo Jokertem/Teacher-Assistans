@@ -49,7 +49,7 @@ export default function ABC_form(props) {
   };
   useEffect(() => {
     if (editElement && editElement.type == "ABC") {
-      setTask(editElement.ask);
+      setTask(editElement.title);
       setA(editElement.anwsers[0]);
       setB(editElement.anwsers[1]);
       setC(editElement.anwsers[2]);
