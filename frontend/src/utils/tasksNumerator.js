@@ -9,7 +9,10 @@ export const TaskNumerator = (pages) => {
   for (let index = 0; index < pageElement.length; index++) {
     const element = pageElement[index];
     if (element.points) {
-      element.title = element.title.substring(2);
+      if (element.title.charAt(1, element.title.length - 1) == ".") {
+        element.title = element.title.substring(2);
+      }
+
       element.title = `${number}. ${element.title}`;
       number++;
     }

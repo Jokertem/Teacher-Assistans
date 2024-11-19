@@ -1,0 +1,24 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.72);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.modal__body {
+  padding: 10px;
+  width: 40%;
+  min-height: 25%;
+  background-color: white;
+  border: 2px solid var(--mainColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select {
+  margin-bottom: 10px;
+}

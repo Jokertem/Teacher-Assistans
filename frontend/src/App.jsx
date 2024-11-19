@@ -5,6 +5,7 @@ import NotFound from "./views/NotFound";
 import Home from "./views/Home";
 import GradesCalc from "./views/GradesCalc";
 import TestGenerator from "./views/TestGenerator";
+import ShortTestGenerator from "./views/ShortTestGenerator";
 import { useReactToPrint } from "react-to-print";
 export const PrintContext = createContext();
 
@@ -22,8 +23,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/oceny" element={<GradesCalc />} />
-
           <Route path="/sprawdziany" element={<TestGenerator />} />
+          <Route path="/kartkówki" element={<ShortTestGenerator />} />
         </Routes>
       </PrintContext.Provider>
     </>
