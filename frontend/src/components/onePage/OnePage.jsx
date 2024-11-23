@@ -8,14 +8,14 @@ import { TaskNumerator } from "../../utils/tasksNumerator";
 export default function OnePage() {
   const { _print } = useContext(PrintContext);
   const [innerRef, handlePrint] = _print;
-  const { _pages, _select, _elements, _modal } = useContext(pagesContext);
+  const { _pages, _select, _elements, _modal, _title, _max } =
+    useContext(pagesContext);
   const [pages, setPages] = _pages;
   const [select, setSelect] = _select;
   const [elements, setElements] = _elements;
   const [modal, setModal] = _modal;
-
-  const [title, setTitle] = useState("Sprawdzian");
-  const [max, setMax] = useState(1);
+  const [title, setTitle] = _title;
+  const [max, setMax] = _max;
 
   const [editTitle, setEditTitle] = useState(false);
   const ChangeTitle = (e) => {
@@ -28,7 +28,7 @@ export default function OnePage() {
   }, [pages]);
   return (
     <>
-      {select != null && (
+      {pages.length != 0 && (
         <button className={styles.print} onClick={handlePrint}>
           Drukuj
         </button>
@@ -43,7 +43,7 @@ export default function OnePage() {
               onChange={ChangeTitle}
             ></textarea>
           )}
-          <div ref={innerRef} className={styles.page}>
+          <div className={styles.page}>
             {select == 0 && (
               <div className={styles.page__header}>
                 <div>

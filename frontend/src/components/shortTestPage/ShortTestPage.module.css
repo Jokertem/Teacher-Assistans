@@ -34,3 +34,39 @@
   -webkit-box-shadow: 0px 2px 18px 7px var(--mainColor);
   -moz-box-shadow: 0px 2px 18px 7px var(--mainColor);
 }
+.split {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+.print {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.6s;
+  margin-bottom: 10px;
+}
+.print:hover {
+  transform: scale(1.3);
+  background-color: var(--mainColor);
+  font-size: 12px;
+  box-shadow: 0px 2px 18px 7px var(--mainColor);
+  -webkit-box-shadow: 0px 2px 18px 7px var(--mainColor);
+  -moz-box-shadow: 0px 2px 18px 7px var(--mainColor);
+  border: none;
+}
+@media print {
+  .page[size="A4"] button {
+    display: none;
+  }
+  img {
+    display: none;
+  }
+  .addContainer {
+    display: none;
+  }
+}

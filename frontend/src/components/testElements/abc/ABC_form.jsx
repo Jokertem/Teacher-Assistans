@@ -5,8 +5,7 @@ import { pagesContext } from "../../../views/TestGenerator";
 
 import { ABC } from "../../../classes/abc";
 export default function ABC_form(props) {
-  const { _edit } = useContext(pagesContext);
-  const [editElement, setEditElement] = _edit;
+  const [editElement, setEditElement] = useState(props.edit);
   const [task, setTask] = useState("");
   const [a, setA] = useState("");
   const [b, setB] = useState("");

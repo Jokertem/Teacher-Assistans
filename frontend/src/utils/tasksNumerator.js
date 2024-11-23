@@ -20,3 +20,20 @@ export const TaskNumerator = (pages) => {
 
   return pages;
 };
+export const ShortTaskNumerator = (elements) => {
+  let number = 1;
+
+  for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    if (element.points) {
+      if (element.title.charAt(1, element.title.length - 1) == ".") {
+        element.title = element.title.substring(2);
+      }
+
+      element.title = `${number}. ${element.title}`;
+      number++;
+    }
+  }
+
+  return elements;
+};

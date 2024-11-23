@@ -4,8 +4,7 @@ import { Text } from "../../../classes/text";
 import { useState, useEffect, useContext } from "react";
 import { pagesContext } from "../../../views/TestGenerator";
 export default function Text_form(props) {
-  const { _edit } = useContext(pagesContext);
-  const [editElement, setEditElement] = _edit;
+  const [editElement, setEditElement] = useState(props.edit);
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const ChangeTitle = (e) => {

@@ -3,6 +3,7 @@ import Paga_Name from "../components/page_name/Paga_Name";
 import TestPages from "../components/testPages/TestPages";
 import OnePage from "../components/onePage/OnePage";
 import Modal from "../components/modal/modal";
+import AllPages from "../components/allPages/AllPages.jsx";
 import { TaskNumerator } from "../utils/tasksNumerator.js";
 import { useState, createContext, useEffect } from "react";
 export const pagesContext = createContext();
@@ -12,6 +13,8 @@ export default function TestGenerator() {
   const [elements, setElements] = useState([]);
   const [modal, setModal] = useState(false);
   const [editElement, setEditElement] = useState(null);
+  const [title, setTitle] = useState("Sprawdzan");
+  const [max, setMax] = useState(0);
   const [pages, setPages] = useState([
     {
       name: "Strona 1",
@@ -43,11 +46,14 @@ export default function TestGenerator() {
           _elements: [elements, setElements],
           _modal: [modal, setModal],
           _edit: [editElement, setEditElement],
+          _title: [title, setTitle],
+          _max: [max, setMax],
         }}
       >
         <Paga_Name name={"Generator Sprawdzianów"} />
         <TestPages />
         <OnePage />
+        <AllPages />
         {modal && <Modal />}
       </pagesContext.Provider>
     </>

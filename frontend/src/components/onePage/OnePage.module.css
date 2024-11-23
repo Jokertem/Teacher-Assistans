@@ -61,14 +61,3 @@
   -moz-box-shadow: 0px 2px 18px 7px var(--mainColor);
   border: none;
 }
-@media print {
-  .page[size="A4"] button {
-    display: none;
-  }
-  img {
-    display: none;
-  }
-  .addContainer {
-    display: none;
-  }
-}

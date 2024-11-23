@@ -1,0 +1,30 @@
+.all {
+  display: none;
+}
+.page {
+  width: 210mm;
+  height: 290mm;
+  background-color: white;
+  margin: auto;
+  margin-top: 10px;
+}
+.page__header {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+@media print {
+  .all {
+    display: block;
+  }
+  .page[size="A4"] button {
+    display: none;
+  }
+  img {
+    display: none;
+  }
+  .addContainer {
+    display: none;
+  }
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./ShortModal.module.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { elementsContext } from "../../views/ShortTestGenerator";
+import ShortNewElement from "../newElement/ShortNewElement";
+import NewElement from "../newElement/newElement";
 export default function ShortModal() {
   const [types, setTypes] = useState(["Text", "ABC"]);
   const { _modal, _edit } = useContext(elementsContext);
@@ -11,6 +13,13 @@ export default function ShortModal() {
   const ChangeType = (e) => {
     setSelectType(e.target.value);
   };
+  useEffect(() => {
+    if (editElement == null) {
+      setSelectType("Text");
+    } else {
+      setSelectType(editElement.type);
+    }
+  }, [editElement]);
   return (
     <>
       <div className={styles.modal}>
@@ -25,7 +34,7 @@ export default function ShortModal() {
               <option key={type}>{type} </option>
             ))}
           </select>
-          {/* <NewElement type={selectType} /> */}
+          <ShortNewElement type={selectType} />
 
           <button
             id="remove"
