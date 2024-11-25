@@ -1,0 +1,8 @@
+.lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lines__count {
+  color: var(--mainColor);
+}

@@ -14,6 +14,7 @@
   padding-top: 10px;
   flex-wrap: wrap;
 }
+
 @media print {
   .all {
     display: block;

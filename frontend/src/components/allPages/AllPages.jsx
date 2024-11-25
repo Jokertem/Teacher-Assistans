@@ -5,6 +5,8 @@ import { pagesContext } from "../../views/TestGenerator";
 import { PrintContext } from "../../App";
 import Text from "../testElements/text/Text";
 import ABC from "../testElements/abc/ABC";
+import True_False from "../testElements/true_false/True_False";
+import Open from "../testElements/open/Open";
 
 function Elements(props) {
   return (
@@ -20,6 +22,18 @@ function Elements(props) {
           return (
             <div className="element" key={element._id}>
               <ABC element={element} />;
+            </div>
+          );
+        } else if (element.type == "Prawda/Fałsz") {
+          return (
+            <div className="element" key={element._id}>
+              <True_False element={element} />
+            </div>
+          );
+        } else if (element.type == "Otwarte") {
+          return (
+            <div className="element" key={element._id}>
+              <Open element={element} />
             </div>
           );
         }
@@ -48,7 +62,7 @@ export default function AllPages() {
               {index == 0 && (
                 <>
                   <div className={styles.page__header}>
-                    <div>
+                    <div className="signature">
                       <span>_______</span>
                       <p>podpis</p>
                     </div>

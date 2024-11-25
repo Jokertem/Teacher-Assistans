@@ -46,8 +46,8 @@ export default function OnePage() {
           <div className={styles.page}>
             {select == 0 && (
               <div className={styles.page__header}>
-                <div>
-                  <span>_______</span>
+                <div className="signature">
+                  <span>________</span>
                   <p>podpis</p>
                 </div>
                 <div>

@@ -11,7 +11,12 @@ export default function Modal() {
   const [select, setSelect] = _select;
 
   const [pages, setPages] = _pages;
-  const [types, setTypes] = useState(["Text", "ABC"]);
+  const [types, setTypes] = useState([
+    "Text",
+    "ABC",
+    "Prawda/Fałsz",
+    "Otwarte",
+  ]);
   const [selectType, setSelectType] = useState("Text");
   const ChangeType = (e) => {
     setSelectType(e.target.value);

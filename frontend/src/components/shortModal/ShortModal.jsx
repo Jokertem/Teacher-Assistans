@@ -5,7 +5,12 @@ import { elementsContext } from "../../views/ShortTestGenerator";
 import ShortNewElement from "../newElement/ShortNewElement";
 import NewElement from "../newElement/newElement";
 export default function ShortModal() {
-  const [types, setTypes] = useState(["Text", "ABC"]);
+  const [types, setTypes] = useState([
+    "Text",
+    "ABC",
+    "Prawda/Fałsz",
+    "Otwarte",
+  ]);
   const { _modal, _edit } = useContext(elementsContext);
   const [editElement, setEditElement] = _edit;
   const [modal, setModal] = _modal;

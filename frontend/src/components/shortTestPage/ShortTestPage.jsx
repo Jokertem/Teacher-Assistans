@@ -50,7 +50,7 @@ export default function ShortTestPage() {
       </button>
       <div className={styles.page} ref={innerRef}>
         <div className={styles.page__header}>
-          <div>
+          <div className="signature">
             <span>_______</span>
             <p>podpis</p>
           </div>

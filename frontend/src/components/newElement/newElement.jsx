@@ -1,6 +1,8 @@
 import React from "react";
 import Text_form from "../testElements/text/Text_form";
 import ABC_form from "../testElements/abc/ABC_form";
+import True_False_Form from "../testElements/true_false/True_False_Form";
+import Open_form from "../testElements/open/Open_form";
 import { useContext } from "react";
 import { pagesContext } from "../../views/TestGenerator";
 import { TaskNumerator } from "../../utils/tasksNumerator";
@@ -49,6 +51,7 @@ export default function NewElement(props) {
         }
       });
       setPages(newPage);
+      console.log(pages);
     }
 
     setModal(false);
@@ -58,5 +61,9 @@ export default function NewElement(props) {
     return <ABC_form edit={editElement} add={Add} />;
   } else if (props.type == "Text") {
     return <Text_form edit={editElement} add={Add} />;
+  } else if (props.type == "Prawda/Fałsz") {
+    return <True_False_Form edit={editElement} add={Add} />;
+  } else if (props.type == "Otwarte") {
+    return <Open_form edit={editElement} add={Add} />;
   }
 }
