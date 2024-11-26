@@ -1,0 +1,19 @@
+.word {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  margin: auto;
+}
+.cases td {
+  text-align: center;
+}
+.dots {
+  padding: 5px 10px;
+}
+.tableHead {
+  height: 40px;
+}
+.caseName {
+  font-weight: bold;
+}

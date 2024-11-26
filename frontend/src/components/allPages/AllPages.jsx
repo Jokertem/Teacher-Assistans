@@ -7,6 +7,8 @@ import Text from "../testElements/text/Text";
 import ABC from "../testElements/abc/ABC";
 import True_False from "../testElements/true_false/True_False";
 import Open from "../testElements/open/Open";
+import Examples from "../testElements/examples/Examples";
+import Cases from "../testElements/cases/Cases";
 
 function Elements(props) {
   return (
@@ -34,6 +36,18 @@ function Elements(props) {
           return (
             <div className="element" key={element._id}>
               <Open element={element} />
+            </div>
+          );
+        } else if (element.type == "Przykłady") {
+          return (
+            <div className="element" key={element._id}>
+              <Examples element={element} />
+            </div>
+          );
+        } else if (element.type == "Przypadki") {
+          return (
+            <div className="element" key={element._id}>
+              <Cases element={element} />
             </div>
           );
         }

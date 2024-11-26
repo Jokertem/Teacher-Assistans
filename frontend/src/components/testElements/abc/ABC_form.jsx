@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./ABC.module.css";
 import { useState, useEffect, useContext } from "react";
-import { pagesContext } from "../../../views/TestGenerator";
 
 import { ABC } from "../../../classes/abc";
 export default function ABC_form(props) {

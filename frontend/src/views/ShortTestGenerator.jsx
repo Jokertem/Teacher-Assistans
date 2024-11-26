@@ -27,7 +27,15 @@ export default function ShortTestGenerator() {
       _id: crypto.randomUUID(),
     },
   ]);
-
+  useEffect(() => {
+    localStorage.setItem("Short Test", JSON.stringify(elements));
+  }, [elements]);
+  const items = JSON.parse(localStorage.getItem("Short Test"));
+  useEffect(() => {
+    if (items) {
+      setElements(items);
+    }
+  }, []);
   return (
     <>
       <elementsContext.Provider

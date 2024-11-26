@@ -6,6 +6,8 @@ import Text from "../testElements/text/Text";
 import ABC from "../testElements/abc/ABC";
 import True_False from "../testElements/true_false/True_False";
 import Open from "../testElements/open/Open";
+import Examples from "../testElements/examples/Examples";
+import Cases from "../testElements/cases/Cases";
 import Element_panel from "../element_panel/Element_panel";
 export default function Elements() {
   const { _elements, _modal } = useContext(pagesContext);
@@ -40,6 +42,20 @@ export default function Elements() {
           return (
             <div className="element" key={element._id}>
               <Open element={element} />
+              <Element_panel index={index} />
+            </div>
+          );
+        } else if (element.type == "Przykłady") {
+          return (
+            <div className="element" key={element._id}>
+              <Examples element={element} />
+              <Element_panel index={index} />
+            </div>
+          );
+        } else if (element.type == "Przypadki") {
+          return (
+            <div className="element" key={element._id}>
+              <Cases element={element} />
               <Element_panel index={index} />
             </div>
           );

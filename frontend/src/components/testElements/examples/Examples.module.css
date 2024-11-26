@@ -1,8 +1,8 @@
-.newAsk {
+.newExa {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 .list {
   display: flex;
@@ -11,10 +11,10 @@
 .remove {
   cursor: pointer;
 }
-.value {
-  text-align: start;
-  padding: 3px;
-}
-.t_f {
-  width: 30px;
+.examples {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }

@@ -6,6 +6,8 @@ import Text from "../testElements/text/Text";
 import ABC from "../testElements/abc/ABC";
 import True_False from "../testElements/true_false/True_False";
 import Open from "../testElements/open/Open";
+import Examples from "../testElements/examples/Examples";
+import Cases from "../testElements/cases/Cases";
 import ShortElement_panel from "../element_panel/ShortElement_panel";
 export default function ShortElements() {
   const { _elements, _modal } = useContext(elementsContext);
@@ -18,7 +20,7 @@ export default function ShortElements() {
         if (element.type == "Text") {
           return (
             <div className="element" key={element._id}>
-              <Text element={element} />;
+              <Text element={element} />
               <ShortElement_panel index={index} />
             </div>
           );
@@ -40,6 +42,20 @@ export default function ShortElements() {
           return (
             <div className="element" key={element._id}>
               <Open element={element} />
+              <ShortElement_panel index={index} />
+            </div>
+          );
+        } else if (element.type == "Przykłady") {
+          return (
+            <div className="element" key={element._id}>
+              <Examples element={element} />
+              <ShortElement_panel index={index} />
+            </div>
+          );
+        } else if (element.type == "Przypadki") {
+          return (
+            <div className="element" key={element._id}>
+              <Cases element={element} />
               <ShortElement_panel index={index} />
             </div>
           );

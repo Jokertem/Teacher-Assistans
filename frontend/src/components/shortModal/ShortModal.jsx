@@ -10,6 +10,8 @@ export default function ShortModal() {
     "ABC",
     "Prawda/Fałsz",
     "Otwarte",
+    "Przykłady",
+    "Przypadki",
   ]);
   const { _modal, _edit } = useContext(elementsContext);
   const [editElement, setEditElement] = _edit;

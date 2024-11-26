@@ -16,6 +16,8 @@ export default function Modal() {
     "ABC",
     "Prawda/Fałsz",
     "Otwarte",
+    "Przykłady",
+    "Przypadki",
   ]);
   const [selectType, setSelectType] = useState("Text");
   const ChangeType = (e) => {

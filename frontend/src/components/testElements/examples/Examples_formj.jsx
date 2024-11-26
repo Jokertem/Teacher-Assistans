@@ -1,43 +1,48 @@
+import styles from "./Examples.module.css";
+import { Examples } from "../../../classes/examples";
 import { useState, useEffect } from "react";
-import styles from "./True_False.module.css";
-import { True_False } from "../../../classes/true-false";
-export default function True_False_Form(props) {
+export default function Examples_Formj(props) {
   const [editElement, setEditElement] = useState(props.edit);
   const [task, setTask] = useState("");
-  const [asks, setAsks] = useState([]);
-  const [askName, setAskName] = useState("");
+  const [examples, setExamples] = useState([]);
   const [points, setPoints] = useState("");
+  const [exaName, setExaName] = useState("");
   const ChangeTask = (e) => {
     setTask(e.target.value);
   };
   const ChangePoints = (e) => {
     setPoints(e.target.value);
   };
-  const AskChange = (e) => {
-    setAskName(e.target.value);
+  const ChangeName = (e) => {
+    setExaName(e.target.value);
   };
-  const AddAsk = (e) => {
+  const RemoveExa = (i) => {
+    setExamples(examples.filter((example, index) => i != index));
+  };
+  const AddExa = (e) => {
     e.preventDefault();
-    if (askName.trim() == "") {
+    if (exaName.trim() == "") {
       return;
     }
-    setAsks([...asks, askName]);
-  };
-  const RemoveAsk = (i) => {
-    setAsks(asks.filter((ask, index) => index != i));
+    setExamples([...examples, exaName]);
   };
   const Create = (e) => {
     e.preventDefault();
-    if (task.trim() == "" || isNaN(points) || points <= 0 || asks.length == 0) {
+    if (
+      task.trim() == "" ||
+      isNaN(points) ||
+      points <= 0 ||
+      examples.length == 0
+    ) {
       return;
     }
-    const newTask = new True_False(task, asks, points);
+    const newTask = new Examples(task, examples, points);
     props.add(newTask);
   };
   useEffect(() => {
-    if (editElement && editElement.type == "Prawda/Fałsz") {
+    if (editElement && editElement.type == "Przykłady") {
       setTask(editElement.title);
-      setAsks(editElement.asks);
+      setExamples(editElement.exa);
       setPoints(editElement.points);
     }
   }, [editElement]);
@@ -48,22 +53,27 @@ export default function True_False_Form(props) {
           <label htmlFor="">Treść zadania</label>
           <input type="text" value={task} onChange={ChangeTask} />
         </div>
-        <div className={styles.newAsk}>
-          <textarea type="text" placeholder="Pytanie" onChange={AskChange} />
-          <button onClick={AddAsk}>Dodaj</button>
+        <div className={styles.newExa}>
+          <textarea
+            name=""
+            id=""
+            placeholder="Przykłady"
+            onChange={ChangeName}
+          ></textarea>
+          <button onClick={AddExa}>Dodaj</button>
         </div>
         <div>
           <ul>
-            {asks.map((ask, index) => {
+            {examples.map((example, index) => {
               return (
-                <li key={ask} className={styles.list}>
-                  {ask}
+                <li className={styles.list} key={example}>
+                  {example}
                   <img
                     className={styles.remove}
                     src="public/trash.png"
                     alt=""
                     onClick={() => {
-                      RemoveAsk(index);
+                      RemoveExa(index);
                     }}
                   />
                 </li>
