@@ -11,6 +11,8 @@ export const TaskNumerator = (pages) => {
     if (element.points) {
       if (element.title.charAt(1, element.title.length - 1) == ".") {
         element.title = element.title.substring(2);
+      } else if (element.title.charAt(2, element.title.length - 1) == ".") {
+        element.title = element.title.substring(3);
       }
 
       element.title = `${number}. ${element.title}`;
@@ -28,6 +30,8 @@ export const ShortTaskNumerator = (elements) => {
     if (element.points) {
       if (element.title.charAt(1, element.title.length - 1) == ".") {
         element.title = element.title.substring(2);
+      } else if (element.title.charAt(2, element.title.length - 1) == ".") {
+        element.title = element.title.substring(3);
       }
 
       element.title = `${number}. ${element.title}`;

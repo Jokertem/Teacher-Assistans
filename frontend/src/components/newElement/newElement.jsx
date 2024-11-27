@@ -53,7 +53,6 @@ export default function NewElement(props) {
         }
       });
       setPages(newPage);
-      console.log(pages);
     }
 
     setModal(false);
