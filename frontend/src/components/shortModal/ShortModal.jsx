@@ -12,6 +12,7 @@ export default function ShortModal() {
     "Otwarte",
     "Przykłady",
     "Przypadki",
+    "Uzupełnij Tekst",
   ]);
   const { _modal, _edit } = useContext(elementsContext);
   const [editElement, setEditElement] = _edit;

@@ -9,6 +9,7 @@ import True_False from "../testElements/true_false/True_False";
 import Open from "../testElements/open/Open";
 import Examples from "../testElements/examples/Examples";
 import Cases from "../testElements/cases/Cases";
+import Complete from "../testElements/complete/Complete";
 
 function Elements(props) {
   return (
@@ -48,6 +49,12 @@ function Elements(props) {
           return (
             <div className="element" key={element._id}>
               <Cases element={element} />
+            </div>
+          );
+        } else if (element.type == "Uzupełnij Tekst") {
+          return (
+            <div className="element" key={element._id}>
+              <Complete element={element} />
             </div>
           );
         }

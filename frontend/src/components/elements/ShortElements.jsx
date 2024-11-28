@@ -8,6 +8,7 @@ import True_False from "../testElements/true_false/True_False";
 import Open from "../testElements/open/Open";
 import Examples from "../testElements/examples/Examples";
 import Cases from "../testElements/cases/Cases";
+import Complete from "../testElements/complete/Complete";
 import ShortElement_panel from "../element_panel/ShortElement_panel";
 export default function ShortElements() {
   const { _elements, _modal } = useContext(elementsContext);
@@ -56,6 +57,13 @@ export default function ShortElements() {
           return (
             <div className="element" key={element._id}>
               <Cases element={element} />
+              <ShortElement_panel index={index} />
+            </div>
+          );
+        } else if (element.type == "Uzupełnij Tekst") {
+          return (
+            <div className="element" key={element._id}>
+              <Complete element={element} />
               <ShortElement_panel index={index} />
             </div>
           );

@@ -1,0 +1,7 @@
+.form__textValue {
+  display: flex;
+  align-items: center;
+}
+.textValue {
+  word-wrap: break-word;
+}

@@ -5,6 +5,7 @@ import True_False_Form from "../testElements/true_false/True_False_Form";
 import Open_form from "../testElements/open/Open_form";
 import Examples_Formj from "../testElements/examples/Examples_Formj";
 import Cases_form from "../testElements/cases/Cases_form";
+import Complete_form from "../testElements/complete/Complete_form";
 import { useContext } from "react";
 import { pagesContext } from "../../views/TestGenerator";
 import { TaskNumerator } from "../../utils/tasksNumerator";
@@ -70,5 +71,7 @@ export default function NewElement(props) {
     return <Examples_Formj edit={editElement} add={Add} />;
   } else if (props.type == "Przypadki") {
     return <Cases_form edit={editElement} add={Add} />;
+  } else if (props.type == "Uzupełnij Tekst") {
+    return <Complete_form edit={editElement} add={Add} />;
   }
 }

@@ -18,6 +18,7 @@ export default function Modal() {
     "Otwarte",
     "Przykłady",
     "Przypadki",
+    "Uzupełnij Tekst",
   ]);
   const [selectType, setSelectType] = useState("Text");
   const ChangeType = (e) => {
