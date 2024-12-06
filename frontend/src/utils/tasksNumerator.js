@@ -14,7 +14,8 @@ export const TaskNumerator = (pages) => {
       } else if (element.title.charAt(2, element.title.length - 1) == ".") {
         element.title = element.title.substring(3);
       }
-
+      element.title = element.title.trim();
+      console.log(element.title);
       element.title = `${number}. ${element.title}`;
       number++;
     }
@@ -34,7 +35,7 @@ export const ShortTaskNumerator = (elements) => {
         element.title = element.title.substring(3);
       }
 
-      element.title = `${number}. ${element.title}`;
+      element.title = `${number}.${element.title}`;
       number++;
     }
   }

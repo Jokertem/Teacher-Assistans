@@ -4,6 +4,7 @@ export class Complete {
     this.title = title;
     this.text = value;
     this.points = points;
+    this.number = undefined;
     this._id = crypto.randomUUID();
   }
 }

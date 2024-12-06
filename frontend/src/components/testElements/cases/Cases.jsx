@@ -22,7 +22,7 @@ export default function Cases(props) {
             <tbody>
               {_cases.map((_case) => {
                 return (
-                  <tr className={styles.cases}>
+                  <tr key={_case} className={styles.cases}>
                     <td className={styles.caseName}>{_case}</td>
                     <td className={styles.dots}>...........................</td>
                     <td className={styles.dots}>...........................</td>

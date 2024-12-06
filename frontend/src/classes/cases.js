@@ -4,6 +4,7 @@ export class Cases {
     this.title = title;
     this.word = word;
     this.points = points;
+    this.number = undefined;
     this._id = crypto.randomUUID();
   }
 }

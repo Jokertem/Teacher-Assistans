@@ -4,6 +4,7 @@ export class Examples {
     this.title = title;
     this.exa = exa;
     this.points = points;
+    this.number = undefined;
     this._id = crypto.randomUUID();
   }
 }

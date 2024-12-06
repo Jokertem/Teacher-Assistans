@@ -4,6 +4,7 @@ export class True_False {
     this.title = title;
     this.asks = asks;
     this.points = points;
+    this.number = undefined;
 
     this._id = crypto.randomUUID();
   }

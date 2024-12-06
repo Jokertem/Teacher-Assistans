@@ -10,7 +10,7 @@ import { useReactToPrint } from "react-to-print";
 export const PrintContext = createContext();
 
 function App() {
-  const projectName = "Teacher Assisants";
+  const projectName = "Test Generator";
 
   const contentRef = useRef();
   const handlePrint = useReactToPrint({ contentRef });
